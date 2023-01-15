@@ -1,5 +1,68 @@
-.navbar{
-    background:black;
-    height:50px;
-  
+.navbar-default {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  top: 8px;
+
+}
+
+.navbar-default .navbar-nav>li>a {
+  margin-left: 5rem;
+  top: 7px;
+  color: #fff;
+  text-transform: uppercase;
+  float: right;
+
+}
+
+.navbar-default .navbar-brand {
+  color: #fff;
+  font-weight: 900;
+  font-size: 33px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  background-color: rgba(173, 150, 118, 0.2);
+  color: #fff;
+
+
+
+  transition: 0.2s;
+}
+
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
+
+  background-color: rgba(173, 150, 118, 0.2);
+  color: #fff;
+
+  transition: 0.2s;
+
+}
+
+
+@media only screen and (max-width: 991px) {
+  .carousel-caption {
+    padding-bottom: 340px;
+  }
+
+  .carousel-caption h2 {
+    font-size: 40px;
+    letter-spacing: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar-default .navbar-collapse {
+    border-color: transparent;
+    background: transparent;
+    color: white;
+  }
+
+  .navbar-default .navbar-nav>li>a {
+    color: #fff;
+
+  }
+
 }
