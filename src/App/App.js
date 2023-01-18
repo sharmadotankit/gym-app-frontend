@@ -4,15 +4,18 @@ import Navbar from '../comp/Navbar/Navbar';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from '../comp/Home/Home';
 import Footer from '../comp/Footer/Footer';
+import Signup from '../comp/Auth/Signup';
 
 
 
 function App() {
   return (
     <div className="app">
-     <Navbar/> 
+     
      <Router>
+     <Navbar/> 
       <Routes>
+        <Route exact path="/signup" element={<Signup/>}/>
         <Route exact path="/home" element={<Home/>}/>
         <Route exact path="/" element={<Home/>}/>
       </Routes>
