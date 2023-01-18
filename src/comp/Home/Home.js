@@ -1,5 +1,7 @@
 import React from 'react'
 import "../Home/Home.css"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 import first from '../Home/images/first.jpg'
 import second from '../Home/images/2.jpg'
 import third from '../Home/images/3.jpg'
@@ -10,53 +12,31 @@ import sixth from '../Home/images/6.jpg'
 
 
 function Home() {
+ 
+
   return (
-
-    <div id="myCarousel" className="carousel slide carousel-dark" data-ride="carousel ">
-
-      <ol className="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-        <li data-target="#myCarousel" data-slide-to="4"></li>
-        <li data-target="#myCarousel" data-slide-to="5"></li>
-        <li data-target="#myCarousel" data-slide-to="6"></li>
-      </ol>
-
-      <div className="carousel-inner">
-
-        <div className="item active">
-          <img src={first} alt="Los Angeles" style={{ width: "100%", height: "100vh" }} />
-
+<>
+    
+  <Carousel showIndicators showArrows infiniteLoop
+  useKeyboardArrows  >
+      
+      
+       <div>
+        <img  src={first}  alt="1"/>
+        <p className='legend'># BE THE BEST VERSION OF YOU!!!!
+        <button className='btn'>Join the cult</button>
+        </p>
+        
         </div>
-
-        <div className="item">
-          <img src={second} alt="Chicago" style={{ width: "100%", height: "100vh" }} />
-
-        </div>
-
-        <div className="item">
-          <img src={third} alt="New York" style={{ width: "100%", height: "100vh" }} />
-        </div>
-
-        <div className="item">
-          <img src={fourth} alt="New York" style={{ width: "100%", height: "100vh" }} />
-        </div>
-
-        <div className="item">
-          <img src={fifth} alt="New York" style={{ width: "100%", height: "100vh" }} />
-        </div>
-
-        <div className="item">
-          <img src={sixth} alt="New York" style={{ width: "100%", height: "100vh" }} />
-        </div>
-      </div>
-     
-    </div>
+        <img  src={second} alt="2"/>
+        <img src={third} alt="3"/>
+        <img src={fourth} alt="4"/>
+        <img src={fifth} alt="5"/>
+        <img src={sixth} alt="6"/>
 
 
-
+    </Carousel>
+</>
   )
 }
 

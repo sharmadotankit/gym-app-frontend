@@ -1,0 +1,121 @@
+.carousel .thumbs-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+
+
+}
+
+body {
+    overflow-y: hidden;
+    /* Hide vertical scrollbar */
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
+}
+
+.carousel .thumb {
+    display: none !important;
+    margin: 0 !important;
+}
+
+.carousel img {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    height: 100vh !important;
+    width: 100% !important;
+    background: fixed;
+}
+
+.carousel .carousel-status {
+    display: none;
+}
+
+.legend {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+.carousel .slide .legend {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    position: absolute;
+    bottom: 0px !important;
+    left: 40% !important;
+    margin-left: -50% !important;
+    width: 100% !important;
+    border-radius: 10px;
+    background: #000;
+    color: #fff;
+    padding: 0px !important;
+    font-size: 50px !important;
+    text-align: center;
+    opacity: 1 !important;
+    font-weight: bold;
+    font-family: 'Permanent Marker', cursive !important;
+    -webkit-transition: opacity .35s ease-in-out;
+    -moz-transition: opacity .35s ease-in-out;
+    -ms-transition: opacity .35s ease-in-out;
+    -o-transition: opacity .35s ease-in-out;
+    transition: opacity .5s ease-in-out !important;
+}
+
+.carousel .control-dots {
+    position: absolute;
+    bottom: 47px !important;
+    margin: 10px 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 1
+}
+
+@media (min-width: 960px) {
+    .carousel .control-dots {
+        bottom: 47px !important;
+    }
+}
+
+
+p {
+    margin-bottom: 0px !important;
+    padding: 0px !important;
+}
+
+.carousel .slide .legend:hover {
+    opacity: 1 !important;
+
+}
+
+.carousel:hover .slide .legend {
+    opacity: 1 !important;
+
+}
+
+.btn {
+    position: relative;
+    left: 10%;
+    background-color: transparent;
+    font-size: 35px;
+    color: white;
+}
+
+.btn:hover {
+
+    color: #fff;
+    background-color: rgba(243, 13, 13, 0.916);
+}
+
+@media (max-width: 650px) {
+    .carousel .slide .legend {
+        font-size: 50px !important;
+    }
+
+    .btn {
+        font-size: 15px;
+        left: 15px;
+    }
+}
