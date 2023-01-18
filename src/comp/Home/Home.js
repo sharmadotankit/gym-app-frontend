@@ -15,11 +15,19 @@ function Home() {
  
 
   return (
+<>
+    
   <Carousel showIndicators showArrows infiniteLoop
-  useKeyboardArrows   autoPlay >
+  useKeyboardArrows  >
       
-
+      
+       <div>
         <img  src={first}  alt="1"/>
+        <p className='legend'># BE THE BEST VERSION OF YOU!!!!
+        <button className='btn'>Join the cult</button>
+        </p>
+        
+        </div>
         <img  src={second} alt="2"/>
         <img src={third} alt="3"/>
         <img src={fourth} alt="4"/>
@@ -28,7 +36,7 @@ function Home() {
 
 
     </Carousel>
-
+</>
   )
 }
 
