@@ -8,10 +8,12 @@ import third from '../Home/images/3.jpg'
 import fourth from '../Home/images/4.jpg'
 import fifth from '../Home/images/5.jpg'
 import sixth from '../Home/images/6.jpg'
+import Footer from '../Footer/Footer';
 
 
 function Home() {
  return (
+  <>
 <Carousel showIndicators showArrows infiniteLoop
   useKeyboardArrows  autoPlay>
         <img  src={first}  alt="1"/>
@@ -21,6 +23,8 @@ function Home() {
         <img src={fifth} alt="5"/>
         <img src={sixth} alt="6"/>
  </Carousel>
+ <Footer/>
+ </>
    )
 }
 

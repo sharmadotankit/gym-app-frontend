@@ -1,8 +1,41 @@
 .navbar-default {
   background-color: transparent !important;
-  border-color: transparent !important;
-  top: 8px;
+  border-color: transparent;
+  top: 10px;
+  background-image: none !important;
 
+}
+
+.navbar-signup,
+Link {
+  background-color: rgba(7, 14, 14, 0.8);
+  border-color: rgba(7, 14, 14, 0.7);
+  padding: 1px 1px -5px 1px;
+  font-size: 2px;
+
+
+
+}
+
+.link {
+  margin-left: 2rem;
+  top: 1px;
+  color: #fff;
+  text-transform: uppercase;
+  float: right;
+  font-size: 15px;
+}
+
+.navbar-brand {
+  margin-top: 5px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 33px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.navbar-brand:hover {
+  color: red;
 }
 
 .navbar-default .navbar-nav>li>a {
