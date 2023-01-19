@@ -1,0 +1,98 @@
+
+
+.container-signup {
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    
+}
+
+form {
+    background-image: url("D:\GYM\gym-app-frontend\src\comp\Auth\1159910.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 700px;
+    width: 1580px;
+    overflow-y: visible;
+    overflow-x: visible;
+    color: #fff;
+
+    /* background-size: no-repeat center center fixed; */
+
+}
+
+/* Add padding to containers */
+.container-signup {
+    display: flex;
+    padding: 3px;
+    font-size: 13px;
+    width: 25%;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: auto;
+
+
+}
+
+/* Full-width input fields */
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0 15px 0;
+    display: inline-block;
+    border: rgb(222, 207, 207);
+    background-color: rgba(174, 194, 180, 0.3);
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    background-color: none;
+    outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+    border: 1px solid #c8e0e1;
+    margin-bottom: 10px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+    background-color: #32b082;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.registerbtn:hover {
+    opacity: 1 !important;
+}
+
+/* Add a blue text color to links */
+.container-signup>a {
+    color: rgb(255, 101, 30) !important;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    background-color: transparent;
+    text-align: center;
+}
+
+.signup-heading {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-link {
+    color: #fb0909;
+}
