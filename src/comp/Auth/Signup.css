@@ -9,11 +9,11 @@
 }
 
 form {
-    background-image: url("D:\GYM\gym-app-frontend\src\comp\Auth\1159910.jpg");
+    background-image: url("./1159910.jpg");
     background-repeat: no-repeat;
     background-size:cover;
-    height: 700px;
-    width: 1580px;
+    height:100vh;
+    width:100%;
     overflow-y: visible;
     overflow-x: visible;
     color: #fff;
