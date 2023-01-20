@@ -15,7 +15,7 @@ function Navbar() {
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <Link className="navbar-brand" to="/home">FiTnEsS FrEaK</Link>
+          <Link className="navbar-brand" to="/">FiTnEsS FrEaK</Link>
         </div>
 
 
