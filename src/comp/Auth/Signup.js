@@ -6,7 +6,7 @@ import "../Auth/Signup.css"
 function Signup() {
     return (
 
-        <form action="action_page.php" className='background'>
+        <form action="action_page.php">
             <div className="container-signup">
                 <h1 className='signup-heading'>Register</h1>
                 <p className='signup-heading'>Please fill in this form to create an account.</p>
