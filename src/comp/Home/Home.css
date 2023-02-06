@@ -99,7 +99,7 @@ p {
 .btn {
     position: relative;
     left: 10%;
-    background-color: rgba(16, 109, 155, 0.3);
+    background-color: rgb(128, 31, 7);
     font-size: 45px;
     color: white;
     font-family:Georgia, 'Times New Roman', Times, serif;
@@ -109,9 +109,8 @@ p {
 }
 
 .btn:hover {
-
-    color: #fff;
-    background-color: rgba(243, 13, 13, 0.8);
+    color: white;
+    background-color: red;
 }
 
 @media (max-width: 650px) {
