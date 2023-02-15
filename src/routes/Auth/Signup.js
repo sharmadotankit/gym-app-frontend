@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
-import "../Auth/Signup.css"
+import "./Signup.css"
+import {signUp} from '../../utils/actions/authActions';
 
 
 function Signup() {
@@ -12,20 +13,24 @@ function Signup() {
 
     const [error,setError] = useState('');
 
-    const handleOnSignUp =()=>{
+    const handleOnSignUp =async ()=>{
         setError('')
         const {name,email,password} = userData;
         if(!name){
-                setError("Enter a valid name");
+            setError("Enter a valid name");
+            return;
         }
-
         if(!email || !/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)){
             setError("Enter a valid email");
+            return;
         }
-
         if(!password || !/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password)){
             setError("Enter a valid password");
+            return;
         }
+
+        let response = await signUp(userData);
+        console.log("Response from signUp",response);
     }
 
     const handleUserInfoChange = (e)=>{
@@ -66,13 +71,11 @@ function Signup() {
             </div>
 
             <div className="container signin">
-                <p>Already have an account? <Link to="/" className='button-link'>Sign in</Link>.</p>
+                <p>Already have an account? <Link to="/login" className='button-link'>Sign in</Link>.</p>
                 {error?
                     <h4 style={{color:'red',marginTop:'20px'}}>{error}</h4>:null
                 }
             </div>
-
-
         </>
     );
 }

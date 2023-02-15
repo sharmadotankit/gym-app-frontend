@@ -1,14 +1,13 @@
 import React from 'react'
-import "../Home/Home.css"
+import "./Home.css"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import first from '../Home/images/first.jpg'
-import second from '../Home/images/2.jpg'
-import third from '../Home/images/3.jpg'
-import fourth from '../Home/images/4.jpg'
-import fifth from '../Home/images/5.jpg'
-import sixth from '../Home/images/6.jpg'
-import Footer from '../Footer/Footer';
+import first from './images/first.jpg'
+import second from './images/2.jpg'
+import third from './images/3.jpg'
+import fourth from './images/4.jpg'
+import fifth from './images/5.jpg'
+import sixth from './images/6.jpg'
 
 
 function Home() {
@@ -23,7 +22,6 @@ function Home() {
         <img src={fifth} alt="5"/>
         <img src={sixth} alt="6"/>
  </Carousel>
- <Footer/>
  </>
    )
 }
