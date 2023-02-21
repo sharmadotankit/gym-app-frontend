@@ -10,6 +10,11 @@ function Navbar() {
             <Link to='/' className='logo-container'>
                 <img src={FfLogo} alt='logo-img' className={`logo`}/>
             </Link>
+
+            <div className='app-title'>
+                <h1>Fitness Freak</h1>
+            </div>
+
             <div className="nav-links-container">
                 <Link className='nav-link' to='/signup'>
                     SignUp

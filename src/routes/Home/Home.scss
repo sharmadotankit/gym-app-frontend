@@ -5,10 +5,9 @@
 }
 
 body {
-    overflow-y: hidden;
-    /* Hide vertical scrollbar */
     overflow-x: hidden;
     /* Hide horizontal scrollbar */
+    overflow-y: hidden;
 }
 
 .carousel .thumb {
@@ -20,7 +19,7 @@ body {
     margin: 0 !important;
     padding: 0 !important;
     border: 0 !important;
-    height: 100vh !important;
+    height: 95vh !important;
     width: 100% !important;
     background: fixed;
     opacity: 0.88 !important;
@@ -119,5 +118,33 @@ p {
     .btn {
         font-size: 40px;
         left: 15px;
+    }
+}
+
+.title{
+    display: flex;
+    background-color: black;
+    width: 100%;
+    position: absolute;
+    top:70px;
+    height: 95vh;
+    img{
+        width:450px;
+    }
+
+    .get-started-button{
+        position: absolute;
+        top: 100px;
+        margin-left: 8%;
+        padding: 15px 40px;
+        font-size: 20px;
+        border-radius: 10px;
+        transition: 0.5s;
+        background-color: #000;
+        color: white;
+        border: 0px;
+    }
+    .get-started-button:hover{
+        transform: scale(1.1);
     }
 }
