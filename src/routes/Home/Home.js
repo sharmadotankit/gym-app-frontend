@@ -13,7 +13,7 @@ import sideBarPhoto from '../../assets/Fitness Freak Side Moto.png'
 
 function Home() {
  return (
-  <>
+  <div className='home-container'>
       <div className="title">
           <button className='get-started-button'>Get Started</button>
           <img src={sideBarPhoto} alt='sideBar' />
@@ -29,7 +29,7 @@ function Home() {
               </Carousel>
           </>
       </div>
- </>
+ </div>
    )
 }
 

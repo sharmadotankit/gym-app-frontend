@@ -6,6 +6,7 @@ import Home from '../routes/Home/Home';
 import Signup from '../routes/Auth/Signup';
 import Login from "../routes/Auth/Login";
 import Dashboard from "../routes/Dashboard/Dashboard";
+import Profile from "../routes/Profile/Profile";
 import "../common.scss";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer} from "react-toastify";
@@ -22,7 +23,9 @@ function App() {
               <Route index element={<Home/>}/>
               <Route path="/signup" element={<Signup/>}/>
               <Route path="/login" element={<Login/>}/>
-              <Route path="/user-dashboard" element={<Dashboard/>}/>
+              <Route path="/user-dashboard" element={<Dashboard/>}>
+                  <Route path="/user-dashboard/profile" element={<Profile/>} />
+              </Route>
               <Route path="/home" element={<Home/>}/>
           </Route>
         </Routes>

@@ -1,9 +1,15 @@
 import React from "react";
+import './Dashboard.scss'
+import Sidebar from "../../comp/Sidebar/Sidebar";
+import {Outlet} from "react-router-dom";
 
 const Dashboard = () =>{
     return(
         <>
-            <h1>Welcome to dashboard</h1>;
+            <div className="main-container">
+                    <Sidebar/>
+                    <Outlet/>
+            </div>
         </>
     );
 

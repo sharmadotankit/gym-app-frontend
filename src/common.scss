@@ -1,8 +1,9 @@
 body{
   margin:0;
-  font-family: 'Open Sans Condensed',sans-serif;
+  font-family: 'Faustina', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: overlay;
 }
 
 code{
@@ -12,10 +13,33 @@ code{
 
 a{
   text-decoration: none;
-  color: black;
+  color: white;
+}
+
+a:hover{
+  text-decoration: none;
+  color: white;
 }
 
 
 *{
   box-sizing: border-box;
+}
+
+
+//css for scroller
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #111111;
+  border-radius: 10px;
 }

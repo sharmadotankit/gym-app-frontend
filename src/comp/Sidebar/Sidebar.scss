@@ -1,0 +1,42 @@
+.sidebar{
+  width: 25%;
+  background-color: #111111;
+  height: 100%;
+  float: left;
+  color: #EDEDED;
+  padding:0;
+
+
+  .profile-picture{
+    //background-color: pink;
+    text-align: center;
+    margin:20px 20px 0px 20px;
+    height: 230px;
+    img{
+      border-radius: 50%;
+      background-color: bisque;
+      height: 150px;
+    }
+    h1{
+      text-decoration: underline;
+    }
+  }
+
+  .list-options{
+      li {
+        list-style-type: none;
+        font-size: 20px;
+        //background-color: red;
+        width: 100%;
+        margin:10px 0px;
+        padding: 10px 10px 10px 30px;
+        text-align: left;
+        transition: 0.2s;
+      }
+
+    li:hover{
+      background-color: #333333;
+      border:1px solid white;
+    }
+  }
+}
