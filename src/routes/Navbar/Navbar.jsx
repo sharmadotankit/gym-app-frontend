@@ -22,6 +22,10 @@ function Navbar() {
                 <Link className='nav-link' to='/login'>
                     SignIn
                 </Link>
+
+                <Link className='nav-link' to='/login'>
+                    SignOut
+                </Link>
             </div>
         </nav>
         <Outlet/>

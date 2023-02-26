@@ -20,7 +20,6 @@ export const login =  (data)=>{
     return new Promise(async (resolve,reject)=>{
         try{
             let response = await axios.post(`${backendUrl}/api/auth/login`,data);
-            console.log("Response of create user", response);
             resolve(response.data);
         }catch(err){
             reject(err);

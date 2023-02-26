@@ -7,12 +7,15 @@ import Signup from '../routes/Auth/Signup';
 import Login from "../routes/Auth/Login";
 import Dashboard from "../routes/Dashboard/Dashboard";
 import "../common.scss";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer} from "react-toastify";
 
 
 
 function App() {
   return (
     <div className="app">
+        <ToastContainer/>
      <Router>
       <Routes>
           <Route path='/' element={<Navbar/>}>

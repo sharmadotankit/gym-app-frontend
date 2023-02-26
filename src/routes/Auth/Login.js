@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {Link,useNavigate} from "react-router-dom";
 import {login} from "../../utils/actions/authActions";
+import {toast} from "react-toastify";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -13,6 +14,7 @@ const Login = () => {
     const handleUserInfoChange = (e)=>{
         setUserData({...userData , [e.target.name] : e.target.value})
     }
+
 
     const handleOnLogin =async ()=>{
         setError('')
@@ -27,13 +29,19 @@ const Login = () => {
             return;
         }
 
-
-        let response = await login(userData);
-        console.log("Response from login",response);
-        if(response.status){
-            navigate("/user-dashboard")
+        try{
+            let response = await login(userData);
+            console.log("Response from login",response);
+            if(response.status){
+                toast.success("User login successful");
+                navigate("/user-dashboard")
+            }
+        }catch(err){
+            toast.error("Wrong Credentials")
         }
+
     }
+
 
     return (
         <>
