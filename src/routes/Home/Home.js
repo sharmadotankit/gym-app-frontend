@@ -9,13 +9,20 @@ import fourth from './images/4.jpg'
 import fifth from './images/5.jpg'
 import sixth from './images/6.jpg'
 import sideBarPhoto from '../../assets/Fitness Freak Side Moto.png'
+import {useNavigate} from "react-router-dom";
 
 
 function Home() {
+
+    const navigate = useNavigate();
+    const handleExerciseClick = () =>{
+        navigate('/exercise');
+    }
+
  return (
   <div className='home-container'>
       <div className="title">
-          <button className='get-started-button'>Get Started</button>
+          <button onClick={handleExerciseClick} className='get-started-button'>Get Started</button>
           <img src={sideBarPhoto} alt='sideBar' />
           <>
               <Carousel showIndicators showArrows infiniteLoop

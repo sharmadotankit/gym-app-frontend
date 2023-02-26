@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState,useContext} from 'react'
 import {Link,useNavigate} from "react-router-dom";
 import {login} from "../../utils/actions/authActions";
+import {UserContext} from "../../context/user.context";
 import {toast} from "react-toastify";
 
 const Login = () => {
@@ -9,6 +10,7 @@ const Login = () => {
         email:'',
         password:'',
     })
+    const {setCurrentUser} = useContext(UserContext);
 
     const [error,setError] = useState('');
     const handleUserInfoChange = (e)=>{
@@ -33,6 +35,14 @@ const Login = () => {
             let response = await login(userData);
             console.log("Response from login",response);
             if(response.status){
+                setCurrentUser({
+                    name:response.data.name,
+                    email:response.data.email,
+                    token:response.data.token,
+                    id : response.data._id,
+                    isLoggedIn:true,
+
+                })
                 toast.success("User login successful");
                 navigate("/user-dashboard")
             }

@@ -16,9 +16,12 @@
       border-radius: 50%;
       background-color: bisque;
       height: 150px;
+      width: 70%;
+      max-width: 150px;
     }
     h1{
       text-decoration: underline;
+      word-break: break-word;
     }
   }
 
@@ -32,10 +35,11 @@
         padding: 10px 10px 10px 30px;
         text-align: left;
         transition: 0.2s;
+        word-break: break-word;
       }
 
     li:hover{
-      background-color: #333333;
+      background-color: #32b082;
       border:1px solid white;
     }
   }

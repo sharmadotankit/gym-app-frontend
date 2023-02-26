@@ -1,10 +1,25 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Link,Outlet } from "react-router-dom";
 import FfLogo  from "../../assets/logo.png";
 import './Navbar.scss';
+import {UserContext} from "../../context/user.context";
 
 function Navbar() {
-  return (
+    const {currentUser,setCurrentUser} = useContext(UserContext);
+
+    const handleLogout = () =>{
+        setCurrentUser({
+            name:null,
+            email:null,
+            token:null,
+            id:null,
+            isLoggedIn:false,
+        })
+    }
+
+    console.log("current User",currentUser)
+
+    return (
       <React.Fragment>
         <nav className="navigation">
             <Link to='/' className='logo-container'>
@@ -16,20 +31,29 @@ function Navbar() {
             </div>
 
             <div className="nav-links-container">
-                <Link className='nav-link' to='/signup'>
-                    SignUp
-                </Link>
-                <Link className='nav-link' to='/login'>
-                    SignIn
-                </Link>
+                {currentUser?.isLoggedIn?
+                    <>
+                        <Link className='nav-link' to='/' onClick={handleLogout}>
+                            SignOut
+                        </Link>
+                    </>
+                    :
+                    <>
+                        <Link className='nav-link' to='/signup'>
+                            SignUp
+                        </Link>
+                        <Link className='nav-link' to='/login'>
+                            SignIn
+                        </Link>
+                    </>
+                }
 
-                <Link className='nav-link' to='/login'>
-                    SignOut
-                </Link>
+
+
             </div>
         </nav>
         <Outlet/>
       </React.Fragment>
-  )
+    )
 }
 export default Navbar;
