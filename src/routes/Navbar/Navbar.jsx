@@ -17,8 +17,6 @@ function Navbar() {
         })
     }
 
-    console.log("current User",currentUser)
-
     return (
       <React.Fragment>
         <nav className="navigation">
@@ -33,6 +31,9 @@ function Navbar() {
             <div className="nav-links-container">
                 {currentUser?.isLoggedIn?
                     <>
+                        <Link className='nav-link' to='/user-dashboard' >
+                            Dashboard
+                        </Link>
                         <Link className='nav-link' to='/' onClick={handleLogout}>
                             SignOut
                         </Link>

@@ -15,7 +15,6 @@ const PrivateRoute = () => {
     }
     else if(currentUser?.isLoggedIn && currentUser?.token !== null){
         let decode = jwt_decode(currentUser?.token);
-        console.log("decode",decode)
         if(!decode){
             auth = false;
         }

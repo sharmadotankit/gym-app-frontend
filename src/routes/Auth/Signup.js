@@ -30,7 +30,6 @@ function Signup() {
         }
 
         let response = await signUp(userData);
-        console.log("Response from signUp",response);
     }
 
     const handleUserInfoChange = (e)=>{

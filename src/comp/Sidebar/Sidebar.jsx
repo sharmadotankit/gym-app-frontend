@@ -24,7 +24,7 @@ const Sidebar = () => {
         </div>
         <div className='list-options'>
             <Link to='/exercise'>
-                <li>Get Started</li>
+                <li>Start Exercise</li>
             </Link>
             <Link to='/user-dashboard/profile'>
                 <li>Edit profile</li>
