@@ -1,39 +1,39 @@
 import React, {useEffect, useState} from 'react';
-import ExerciseCard from "../../comp/ExerciseCard/ExerciseCard";
+import MuscleCard from "../../comp/MuscleCard/MuscleCard";
 import './Exercise.scss';
 import {
-    fetchMuscleList
-} from '../../utils/actions/apiActions'
+    fetchBodyParts,
+} from '../../utils/actions/apiActions';
+import {useNavigate} from "react-router-dom";
 
 function Exercise(props) {
-
-    const [muscleList,setMuscleList] = useState([]);
+    const [bodyParts,setBodyParts] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(()=>{
-
-        async function fetchMuscle(){
-            const response = await fetchMuscleList();
-            setMuscleList(response.results);
+        async function fetchBodyPart(){
+            const response = await fetchBodyParts();
+            setBodyParts(response);
         }
-        fetchMuscle();
-
+        fetchBodyPart();
     },[]);
+
+    const handleMuscleCardClick = (item) =>{
+        navigate(`/exercise-list/${item}`);
+    }
 
     return (
         <div className='exercise-main-container'>
             <h1>Let us begin with the muscle you want to train today :</h1>
-            {muscleList.length==0?
+            {bodyParts.length==0?
                     <>
                         <h1>Loading....</h1>
                     </>
                     :
                     <div className='exercise-container'>
                         {
-                            muscleList.map((item)=>{
-                                if(item?.name_en?.length>0){
-                                    return <ExerciseCard name={item.name_en} imageUrlMain={item.image_url_main} imageUrlSecondary={item.image_url_secondary} isFront = {item.is_front}/>
-                                }
-
+                            bodyParts.map((item,i)=>{
+                                return <span onClick={()=>handleMuscleCardClick(item)} key={i}><MuscleCard name={item} /></span>
                             })
                         }
                     </div>
