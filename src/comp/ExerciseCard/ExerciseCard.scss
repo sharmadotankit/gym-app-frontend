@@ -1,27 +1,43 @@
-.card-container{
-  // display: inline-block;
+.exercise-name-card-container{
+  display: flex;
   border:1px solid black;
-  height: auto;
-  min-height:500px;
+  height: 100px;
   margin:15px;
-  width: 18%;
-  min-width: 200px;
-  text-align: center;
+  width: 90%;
+  min-width: 300px;
+  max-width: 1500px;
   transition: 0.3s;
   position: relative;
   z-index: 0;
   background-color: #009cb8;
-  border-radius: 10px;
-  overflow-x: hidden;
-  margin-bottom: 30px;
+  border-radius: 15px;
+  // overflow-x: hidden;
+  justify-content: space-between;
+  padding: 0px 30px;
+  align-items: center;
+  
+  
 
   h3{
-    text-decoration: underline;
-    font-size: 30px;
     color: white;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  
+}
+
+.exercise-name-card-container:hover{
+  background-color: #00b8d8;
+  transform: scale(1.01);
+  border:5px solid #00b2d1;
+  transform: translateX(20px);
+  box-shadow: 5px 5px 5px 5px rgba(199, 199, 199, 0.712);
+  .begin-exercise{
+    visibility: visible;
   }
 }
 
-.card-container:hover{
-  transform:scale(1.03);
+.exercise-name-card-container:active{
+  transform: translateY(5px);
 }

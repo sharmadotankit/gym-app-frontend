@@ -1,14 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import MuscleCard from "../../comp/MuscleCard/MuscleCard";
 import './Exercise.scss';
 import {
     fetchBodyParts,
 } from '../../utils/actions/apiActions';
 import {useNavigate} from "react-router-dom";
+import { ExerciseContext } from '../../context/exercise.context';
+
 
 function Exercise(props) {
     const [bodyParts,setBodyParts] = useState([]);
     const navigate = useNavigate();
+    const {setSelectedMuscle} = useContext(ExerciseContext);
 
     useEffect(()=>{
         async function fetchBodyPart(){
@@ -19,6 +22,7 @@ function Exercise(props) {
     },[]);
 
     const handleMuscleCardClick = (item) =>{
+        setSelectedMuscle(item);
         navigate(`/exercise-list/${item}`);
     }
 

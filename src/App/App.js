@@ -16,6 +16,7 @@ import Favourite from "../routes/Favourite/Favourite";
 import Saved from "../routes/Saved/Saved";
 import GetStarted from "../routes/GetStarted/GetStarted";
 import ExerciseList from "../routes/ExerciseList/ExerciseList";
+import ExerciseDescription from '../routes/ExerciseDescription/ExerciseDescription';
 
 
 
@@ -44,6 +45,10 @@ function App() {
 
               <Route path="/exercise-list/:muscleName"  element = {<ProtectedRoute/>}>
                   <Route path="/exercise-list/:muscleName" element={<ExerciseList/>} />
+              </Route>
+
+              <Route path="/exercise-description/:exerciseName"  element = {<ProtectedRoute/>}>
+                  <Route path="/exercise-description/:exerciseName" element={<ExerciseDescription/>} />
               </Route>
           </Route>
         </Routes>

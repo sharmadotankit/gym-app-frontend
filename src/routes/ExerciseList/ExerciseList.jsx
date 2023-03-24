@@ -9,7 +9,6 @@ function ExerciseList(props) {
     let { muscleName } = useParams();
     const [exercisesForSelectedMuscle,setExercisesForSelectedMuscles]= useState([]);
 
-    console.log("ecercisedata",exercisesForSelectedMuscle)
 
     useEffect( ()=>{
         const fetchExerciseData = async()=>{
@@ -30,8 +29,8 @@ function ExerciseList(props) {
                 <h1>Exercises for {muscleName}:-</h1>
                 <span className='exercise-card-span'>
                 { 
-                    exercisesForSelectedMuscle.map(item=>{
-                            return <ExerciseCard item={item}/> 
+                    exercisesForSelectedMuscle.map((item,i)=>{
+                            return <ExerciseCard item={item} key={i}/> 
                         })
                 }
                 </span>
