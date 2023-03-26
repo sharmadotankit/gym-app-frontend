@@ -23,6 +23,7 @@ function Profile() {
                     height:response?.data?.data?.height,
                     weight:response?.data?.data?.weight,
                 });
+                setIsEditable(false);
             }
         }else{
             setIsEditable(true);
