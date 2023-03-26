@@ -19,7 +19,7 @@ const Sidebar = () => {
     return (
     <div className='sidebar'>
         <div className='profile-picture'>
-            <img src='https://robohash.org/ff' alt={'profile-pic'} />
+            <img src={`https://robohash.org/${currentUser?.name}`} alt={'profile-pic'} />
             <h1>{currentUser?.name}</h1>
         </div>
         <div className='list-options'>
@@ -28,9 +28,6 @@ const Sidebar = () => {
             </Link>
             <Link to='/user-dashboard/profile'>
                 <li>Edit profile</li>
-            </Link>
-            <Link to='/user-dashboard/favourite'>
-                <li>Favourites</li>
             </Link>
             <Link to='/user-dashboard/saved'>
                 <li>Saved </li>

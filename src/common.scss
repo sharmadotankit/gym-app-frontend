@@ -49,3 +49,22 @@ a:active{
   background: #111111;
   border-radius: 10px;
 }
+
+
+.primay-button{
+  padding: 5px 10px;
+  width: 200px;
+  background-color: #009cb8; 
+  border-radius: 3px;
+  border:1px solid #009cb8;
+  color: white;
+  transition: 0.3s;
+}
+
+.primay-button:hover{
+  transform: scale(1.02);
+}
+
+.primay-button:active{
+  transform: translateY(5px);
+}

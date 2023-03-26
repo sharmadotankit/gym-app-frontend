@@ -1,5 +1,40 @@
 .profile-main-container{
-  //background-color: red;
-  text-align: center;
-  margin:-20px 0px;
+  margin-top: -20px;
+  text-align: center; 
+  width: 100%;
+  
+
+  h1{
+    color:black;
+  }
+
+  p{
+    color:black
+  }
+
+  .profile-card{
+    padding: 30px;
+    width: 600px;
+    margin: auto;
+    margin-top: 40px;
+    
+    border: 1px solid rgba(131, 131, 131, 0.363);
+    box-shadow: 10px 10px 10px rgb(121, 121, 121);
+
+    label{
+      margin-top: 20px;
+    }
+
+    input,label{
+      text-align: left;
+      min-width: 450px;
+    }
+
+    button{
+      text-align: center;
+      margin-top: 40px;
+    }
+  }
+
+ 
 }

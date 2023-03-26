@@ -4,19 +4,28 @@
     padding: 20px;
     display: flex;
 
-    img{
-        border-radius: 3px;
-        height: 100%;
-        width: 50%;
+    .div-left{
+       img{
+        height: 60vh;
+        width: auto;
+        border-radius: 5px;
+        border:1px solid black;
+        }
     }
 
     .description-div{
-        width: 80%;
+        width: 100%;
         min-width: 400px;
         margin-top: 40px;
         margin-left: 300px;
         text-align: left;
+        color: #000;
+        h1{
+          text-align: center;
+          margin-bottom: 10px;
+        }
         h2{
+          margin-top: 60px;
           font-size: 40px;
         }
 
@@ -27,6 +36,7 @@
 
     .button-div{
         text-align: left;
+        margin-top: 40px;
         .begin-exercise{
           color:rgb(255, 255, 255);
           font-size: 1.8rem;
@@ -42,6 +52,11 @@
     
         .begin-exercise:hover{
           transform: scale(1.05);
+        }
+
+        p{
+          font-size: 14px;
+          color:red;
         }
       }
 }

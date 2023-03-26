@@ -32,7 +32,7 @@ function App() {
               <Route path="/login" element={<Login/>}/>
               <Route path="/user-dashboard"  element = {<ProtectedRoute/>} >
                   <Route path="/user-dashboard" element={<Dashboard/>}>
-                      <Route index element={<GetStarted/>}/>
+                      <Route index element={<Profile/>}/>
                       <Route path="/user-dashboard/profile" element={<Profile/>} />
                       <Route path="/user-dashboard/favourite" element={<Favourite/>} />
                       <Route path="/user-dashboard/saved" element={<Saved/>} />

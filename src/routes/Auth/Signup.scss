@@ -1,5 +1,5 @@
-
-
+.signUpDiv{
+    
 .container-signup {
     box-sizing: border-box;
     padding-top: 10px;
@@ -27,15 +27,19 @@ form {
     display: flex;
     padding: 3px;
     font-size: 13px;
-    width: 25%;
+    width: 50%;
     align-items: flex-start;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 150px;
     margin-bottom: auto;
-
-
+    background-color: black;
+    padding: 30px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    color: white;
+    min-width: 400px;
 }
 
 /* Full-width input fields */
@@ -47,7 +51,7 @@ input[type=email]{
     margin: 6px 0 15px 0;
     display: inline-block;
     border: rgb(222, 207, 207);
-    background-color: rgba(174, 194, 180, 0.3);
+    background-color: rgba(61, 61, 61, 0.3);
 }
 
 input[type=text]:focus,
@@ -80,7 +84,7 @@ hr {
 
 /* Add a blue text color to links */
 .container-signup>a {
-    color: rgb(255, 101, 30) !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 /* Set a grey background color and center the text of the "sign in" section */
@@ -95,5 +99,31 @@ hr {
 }
 
 .button-link {
-    color: #fb0909;
+    color: #ff0000;
+}
+
+
+.div-left{
+    width: 100%;
+    text-align: center;
+}
+
+.div-right{
+    width: 100%;
+}
+
+.signup-img{
+    margin-left: -10%;
+    margin-top: 5px;
+    height: 76vh;
+}
+
+h1{
+    margin-right: 130px;
+    color: white;
+}
+
+.bottom-h1{
+    margin-left: 30px;
+}
 }

@@ -1,7 +1,10 @@
-import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
-import "./Signup.css"
+import React, {useContext, useState} from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import "./Signup.scss"
 import {signUp} from '../../utils/actions/authActions';
+import { UserContext } from '../../context/user.context';
+import registrationBackground from "../../assets/registration_page_img.png";
+import { toast } from 'react-toastify';
 
 
 function Signup() {
@@ -10,11 +13,15 @@ function Signup() {
         email:'',
         password:'',
     })
+    const navigate = useNavigate();
 
     const [error,setError] = useState('');
 
+    const {setCurrentUser} = useContext(UserContext);
+
     const handleOnSignUp =async ()=>{
-        setError('')
+        try{
+            setError('')
         const {name,email,password} = userData;
         if(!name){
             setError("Enter a valid name");
@@ -30,6 +37,28 @@ function Signup() {
         }
 
         let response = await signUp(userData);
+        if(response.status){
+            setCurrentUser({
+                name:response?.response?.name,
+                email:response?.response?.email,
+                token:response?.response?.token,
+                id:response?.response?._id,
+                isLoggedIn:true,
+                height:response?.response?.height,
+                weight:response?.response?.weight,
+            });
+            toast.success("User login successful");
+            navigate("/user-dashboard")
+        }else{
+            toast.error("Something went wrong while registering the user.Please try again later.")
+        }
+        }
+        catch(err){
+            console.log('error',err)
+            toast.error(err?.response?.data?.message || "Something went wrong");
+            return;
+        }
+        
     }
 
     const handleUserInfoChange = (e)=>{
@@ -38,10 +67,17 @@ function Signup() {
 
     return (
         <>
+        <div style={{display:'flex',backgroundColor:'red',height:'100vh'}} className="signUpDiv">
+            <div className='div-left'>
+                <h1>No Pain , No Gain</h1>
+                <img src={registrationBackground} className='signup-img'/>
+                <h1>Begin you journey now</h1>
+               
+            </div>
+            <div className='div-right'>
             <div className="container-signup">
                 <h1 className='signup-heading'>Register</h1>
                 <p className='signup-heading'>Please fill in this form to create an account.</p>
-                <hr/>
                 <label htmlFor="psw"><b>Name</b></label>
                 <input type="text" placeholder="Enter Name" name="name" id="psw" onChange={handleUserInfoChange} />
 
@@ -63,18 +99,21 @@ function Signup() {
                         null
                 }
 
-                <hr/>
-
-                <p>By creating an account you agree to our <Link to="/" className='button-link'>Terms & Privacy</Link>.</p>
                 <button type="submit" className="registerbtn" onClick={handleOnSignUp}>Register</button>
+           
+                <div className="">
+                    <p>Already have an account? <Link to="/login" className='button-link'>Sign in</Link>.</p>
+                    {error?
+                        <h4 style={{color:'red',marginTop:'20px'}}>{error}</h4>:null
+                    }
+                </div>
+
             </div>
 
-            <div className="container signin">
-                <p>Already have an account? <Link to="/login" className='button-link'>Sign in</Link>.</p>
-                {error?
-                    <h4 style={{color:'red',marginTop:'20px'}}>{error}</h4>:null
-                }
+            
             </div>
+        </div>
+            
         </>
     );
 }
