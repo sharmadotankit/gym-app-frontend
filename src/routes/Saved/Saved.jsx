@@ -30,12 +30,13 @@ function Saved() {
     }
     return (
         <div className='saved-container'>
+            <h1>Saved Exercises:-</h1>
              {savedExercise.length==0?
             <>
-                Loading...
+                No Saved Exercise Found
             </>:
             <div className='saved-list-div'>
-                <h1>Saved Exercises:-</h1>
+                
                 <span className='exercise-card-span'>
                 { 
                     savedExercise.map((item,i)=>{
