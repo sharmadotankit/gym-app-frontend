@@ -2,19 +2,21 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import {fetchExerciseByBodyParts} from '../../utils/actions/apiActions';
 import ExerciseCard from "../../comp/ExerciseCard/ExerciseCard";
-import exerciseData from './data.json';
+// import exerciseData from './data.json';
 import './ExerciseList.scss';
 
 function ExerciseList(props) {
     let { muscleName } = useParams();
     const [exercisesForSelectedMuscle,setExercisesForSelectedMuscles]= useState([]);
-
+    
 
     useEffect( ()=>{
         const fetchExerciseData = async()=>{
-                // let itemResponse = await fetchExerciseByBodyParts(muscleName);
-                // setExercisesForSelectedMuscles(itemResponse.data);
-                setExercisesForSelectedMuscles(exerciseData)
+            console.log(muscleName)
+                let itemResponse = await fetchExerciseByBodyParts(muscleName);
+                console.log('itemResponse',itemResponse)
+                setExercisesForSelectedMuscles(itemResponse.data);
+                // setExercisesForSelectedMuscles(exerciseData)
         }
         fetchExerciseData();
     },[])

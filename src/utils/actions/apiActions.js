@@ -34,7 +34,7 @@ export const fetchExerciseByBodyParts =  (data)=>{
             data = data.replace(" ","%20")
             const options = {
                 method: 'GET',
-                url: 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/lower%20arms',
+                url: `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${data}`,
                 headers: {
                   'X-RapidAPI-Key': API_KEY,
                   'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
