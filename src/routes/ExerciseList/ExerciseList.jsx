@@ -12,9 +12,7 @@ function ExerciseList(props) {
 
     useEffect( ()=>{
         const fetchExerciseData = async()=>{
-            console.log(muscleName)
                 let itemResponse = await fetchExerciseByBodyParts(muscleName);
-                console.log('itemResponse',itemResponse)
                 setExercisesForSelectedMuscles(itemResponse.data);
                 // setExercisesForSelectedMuscles(exerciseData)
         }
