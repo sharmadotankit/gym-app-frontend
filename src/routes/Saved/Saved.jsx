@@ -4,6 +4,7 @@ import { UserContext } from '../../context/user.context';
 import './Saved.scss';
 import {fetchSavedExercise} from '../../utils/actions/allActions'
 import ExerciseCard from '../../comp/ExerciseCard/ExerciseCard';
+import {toast} from 'react-toastify';
 
 function Saved() {
     const {currentUser} = useContext(UserContext);
