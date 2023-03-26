@@ -31,7 +31,6 @@ const ExerciseDescription = () =>{
                 selectedExercise: JSON.stringify(selectedExercise),
             }
             const response = await saveExerciseToProfile(token, data);
-            console.log("response",response)
             if(response.status==200){
                 toast.success(response.data.message);
             }else{

@@ -12,7 +12,6 @@ function Profile() {
     const handleEditInformation = async() =>{
         if(isEditable){
             const response = await updateUserInformation(token,currentUser);
-            console.log("response",response)
             if(response.data.status){
                 toast.success(response.data.message);
                 setCurrentUser({

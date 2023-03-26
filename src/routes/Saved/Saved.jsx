@@ -21,7 +21,6 @@ function Saved() {
 
     const fetchData = async() =>{
         const response = await fetchSavedExercise(token,currentUser.id);
-        console.log("repsonse",response)
         if(response.data.status){
             setSavedExercise(response.data.data);
         }else{
