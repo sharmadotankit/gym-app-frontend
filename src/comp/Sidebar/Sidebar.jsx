@@ -29,6 +29,9 @@ const Sidebar = () => {
             <Link to='/user-dashboard/profile'>
                 <li>Edit profile</li>
             </Link>
+            <Link to='/user-dashboard/bmi-calculator'>
+                <li>Calculate BMI</li>
+            </Link>
             <Link to='/user-dashboard/saved'>
                 <li>Saved </li>
             </Link>

@@ -17,6 +17,7 @@ import Saved from "../routes/Saved/Saved";
 import GetStarted from "../routes/GetStarted/GetStarted";
 import ExerciseList from "../routes/ExerciseList/ExerciseList";
 import ExerciseDescription from '../routes/ExerciseDescription/ExerciseDescription';
+import BMI from '../routes/BMI/BMI';
 
 
 
@@ -36,6 +37,7 @@ function App() {
                       <Route path="/user-dashboard/profile" element={<Profile/>} />
                       <Route path="/user-dashboard/favourite" element={<Favourite/>} />
                       <Route path="/user-dashboard/saved" element={<Saved/>} />
+                      <Route path="/user-dashboard/bmi-calculator" element={<BMI/>} />       
                   </Route>
               </Route>
               <Route path="/home" element={<Home/>}/>
