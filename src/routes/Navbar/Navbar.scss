@@ -3,22 +3,15 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    background-color: black;
+    background-color: #1D5D9B;
 
     .app-title{
-        color: white;
-        text-align: center;
-        width: 500px;
+        color: #FBEEAC;
+        text-decoration: none;
+        margin-left: 20px;
+        margin-top: -10px;
     }
 
-    .logo-container {
-        height: 100%;
-        width: 70px;
-
-        .logo{
-            height: 100%;
-        }
-    }
 
     .nav-links-container {
         width: 8%;
@@ -26,11 +19,12 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        background-color: black;
+        background-color: #1D5D9B;
+        font-size: 20px;
         .nav-link {
             padding: 10px 15px;
             cursor: pointer;
-            color: white;
+            color: #FBEEAC;
         }
     }
 }

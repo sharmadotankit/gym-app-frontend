@@ -39,14 +39,22 @@ function Signup() {
         let response = await signUp(userData);
         if(response.status){
             setCurrentUser({
-                name:response?.response?.name,
-                email:response?.response?.email,
-                token:response?.response?.token,
-                id:response?.response?._id,
+                name:response?.data?.name,
+                email:response?.data?.email,
+                token:response?.data?.token,
+                id:response?.data?._id,
                 isLoggedIn:true,
-                height:response?.response?.height,
-                weight:response?.response?.weight,
+                height:response?.data?.height,
+                weight:response?.data?.weight,
             });
+
+            localStorage.setItem("name", response?.data?.name);
+            localStorage.setItem("email", response?.data?.email);
+            localStorage.setItem("_id", response?.data?._id);
+            localStorage.setItem("token", JSON.stringify(response?.data?.token));
+            localStorage.setItem("isLoggedIn", true);
+
+
             toast.success("User login successful");
             navigate("/user-dashboard")
         }else{
@@ -67,25 +75,24 @@ function Signup() {
 
     return (
         <>
-        <div style={{display:'flex',backgroundColor:'red',height:'100vh'}} className="signUpDiv">
+        <div className="signUpDiv">
             <div className='div-left'>
                 <h1>No Pain , No Gain</h1>
                 <img src={registrationBackground} className='signup-img'/>
-                <h1>Begin you journey now</h1>
-               
+                <h1>Begin you journey now</h1> 
             </div>
             <div className='div-right'>
             <div className="container-signup">
                 <h1 className='signup-heading'>Register</h1>
                 <p className='signup-heading'>Please fill in this form to create an account.</p>
-                <label htmlFor="psw"><b>Name</b></label>
-                <input type="text" placeholder="Enter Name" name="name" id="psw" onChange={handleUserInfoChange} />
+                <label htmlFor="name"><b>Name</b></label>
+                <input type="text" placeholder="Enter Name" name="name" id="name" onChange={handleUserInfoChange} />
 
                 <label htmlFor="email"><b>Email</b></label>
                 <input type="email" placeholder="Enter Email" name="email" id="email" onChange={ handleUserInfoChange}/>
 
-                <label htmlFor="psw-repeat"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" id="psw-repeat" onChange={handleUserInfoChange}/>
+                <label htmlFor="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" id="psw" onChange={handleUserInfoChange}/>
                 {
                     error && error==='Enter a valid password'?
                         <div style={{color:"red",fontSize:'14px'}}>
@@ -101,7 +108,7 @@ function Signup() {
 
                 <button type="submit" className="registerbtn" onClick={handleOnSignUp}>Register</button>
            
-                <div className="">
+                <div>
                     <p>Already have an account? <Link to="/login" className='button-link'>Sign in</Link>.</p>
                     {error?
                         <h4 style={{color:'red',marginTop:'20px'}}>{error}</h4>:null

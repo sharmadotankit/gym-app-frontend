@@ -15,6 +15,14 @@ const Sidebar = () => {
             id:null,
             isLoggedIn:false,
         })
+
+        localStorage.setItem("name","");
+        localStorage.setItem("email", "");
+        localStorage.setItem("_id", "");
+        localStorage.setItem("token", "");
+        localStorage.setItem("isLoggedIn", false);
+        localStorage.setItem("height", "");
+        localStorage.setItem("weight", "");
     }
     return (
     <div className='sidebar'>

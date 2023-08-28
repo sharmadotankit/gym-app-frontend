@@ -4,6 +4,7 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: overlay;
+  background-color: #FBEEAC;
 }
 
 code{
@@ -33,30 +34,14 @@ a:active{
 }
 
 
-//css for scroller
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #111111;
-  border-radius: 10px;
-}
 
 
 .primay-button{
   padding: 5px 10px;
   width: 200px;
-  background-color: #009cb8; 
+  background-color: #1D5D9B; 
   border-radius: 3px;
-  border:1px solid #009cb8;
+  border:1px solid #1D5D9B;
   color: white;
   transition: 0.3s;
 }

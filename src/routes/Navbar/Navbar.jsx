@@ -15,19 +15,22 @@ function Navbar() {
             id:null,
             isLoggedIn:false,
         })
+        localStorage.setItem("name","");
+        localStorage.setItem("email", "");
+        localStorage.setItem("_id", "");
+        localStorage.setItem("token", "");
+        localStorage.setItem("isLoggedIn", false);
+        localStorage.setItem("height", "");
+        localStorage.setItem("weight", "");
     }
+
 
     return (
       <React.Fragment>
         <nav className="navigation">
-            <Link to='/' className='logo-container'>
-                <img src={FfLogo} alt='logo-img' className={`logo`}/>
-            </Link>
-
-            <div className='app-title'>
+            <Link to='/' className='app-title'>
                 <h1>Fitness Freak</h1>
-            </div>
-
+            </Link>
             <div className="nav-links-container">
                 {currentUser?.isLoggedIn?
                     <>
@@ -48,9 +51,6 @@ function Navbar() {
                         </Link>
                     </>
                 }
-
-
-
             </div>
         </nav>
         <Outlet/>

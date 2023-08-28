@@ -53,7 +53,7 @@ const ExerciseDescription = () =>{
                 </div>
                 
                 <div className="description-div">
-                    <h1 style={{textDecoration:'underline',fontSize:'50px',color:'black'}}>{  selectedExercise?.name.charAt(0).toUpperCase() + selectedExercise?.name.slice(1) }</h1>
+                    <h1 style={{textDecoration:'underline',fontSize:'50px',color:'#75C2F6'}}>{  selectedExercise?.name.charAt(0).toUpperCase() + selectedExercise?.name.slice(1) }</h1>
                     <h2>Description : </h2>
                     <p>Body Part : {selectedExercise?.bodyPart.charAt(0).toUpperCase() + selectedExercise?.bodyPart.slice(1)  } </p>
                     {selectedExercise?.equipment?<p>Equipment : { selectedExercise?.equipment.charAt(0).toUpperCase() + selectedExercise?.equipment.slice(1) }</p>:''}

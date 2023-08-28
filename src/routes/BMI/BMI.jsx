@@ -1,31 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import BMIImage from './BMI.png';
 import axios from 'axios';
+import {UserContext} from "../../context/user.context";
 
 const BMI = ()=> {
-    const [height,setHeight] = useState(null);
-    const [weight,setWeight] = useState(null);
+    const {currentUser} = useContext(UserContext);
+    const [height,setHeight] = useState(currentUser?.height);
+    const [weight,setWeight] = useState(currentUser?.weight);
     const [isBMICalculated,setIsBMICalculated] = useState(false);
     const [bmiValue,setBmiValue] = useState(null);
+    
 
     const handleCalculateBMI = async()=>{
         try{
             setIsBMICalculated(true);
-            const options = {
-                method: 'GET',
-                url: 'https://body-mass-index-bmi-calculator.p.rapidapi.com/metric',
-                params: {
-                  weight: weight,
-                  height: height,
-                },
-                headers: {
-                  'X-RapidAPI-Key': 'ac47eef329msh54ec2add5a33035p19f962jsn2d32703ad640',
-                  'X-RapidAPI-Host': 'body-mass-index-bmi-calculator.p.rapidapi.com'
-                }
-            };
-            const response = await axios.request(options);
-	        console.log(response.data);
-            setBmiValue(response.data.bmi);
+            let bmiValue = weight/(height*height);
+            setBmiValue(bmiValue);
         }catch(err){
             setIsBMICalculated(false);
         }
@@ -55,16 +45,17 @@ const BMI = ()=> {
 
 
                 <button className='primay-button' onClick={handleCalculateBMI}> Calculate BMI</button>
-            </div>
-            {(isBMICalculated && bmiValue)?
+                {(isBMICalculated && bmiValue)?
                     <>
                         <h3>Your BMI is</h3>
                         <h1>{Number(bmiValue).toFixed(2)}</h1>
-                        <img  src={BMIImage} height="350px"/>
+                        <img  src={BMIImage} height="350px" style={{width:'100%'}}/>
                     </>
                     :
                     <></>
                 }
+            </div>
+            
         </div>
  
   )

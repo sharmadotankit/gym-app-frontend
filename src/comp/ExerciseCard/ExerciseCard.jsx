@@ -14,10 +14,8 @@ function ExerciseCard({item}) {
 
     return (
         <div className='exercise-name-card-container' onClick={handleExerciseDescription}>
-                <h3>{name.toString().toUpperCase()}</h3>
-                <div>
-                    <p style={{fontSize:'2rem',color:'white'}}>Click to begin !</p>
-                </div>
+            <h3>{name.toString().toUpperCase()}</h3>
+            <p>Click to View Tutorial!!</p>
         </div>
     );
 }

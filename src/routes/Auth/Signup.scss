@@ -1,129 +1,86 @@
 .signUpDiv{
-    
-.container-signup {
-    box-sizing: border-box;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    
-    
-}
-
-form {
-    background-image: url("1159910.jpg");
-    background-repeat: no-repeat;
-    background-size:cover;
-    height:100vh;
-    width:100%;
-    overflow-y: visible;
-    overflow-x: visible;
-    color: #fff;
-
-    /* background-size: no-repeat center center fixed; */
-
-}
-
-/* Add padding to containers */
-.container-signup {
     display: flex;
-    padding: 3px;
-    font-size: 13px;
-    width: 50%;
-    align-items: flex-start;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 150px;
-    margin-bottom: auto;
-    background-color: black;
-    padding: 30px;
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 10px;
-    color: white;
-    min-width: 400px;
-}
-
-/* Full-width input fields */
-input[type=text],
-input[type=password],
-input[type=email]{
     width: 100%;
-    padding: 10px;
-    margin: 6px 0 15px 0;
-    display: inline-block;
-    border: rgb(222, 207, 207);
-    background-color: rgba(61, 61, 61, 0.3);
-}
+    flex-wrap: wrap;
 
-input[type=text]:focus,
-input[type=password]:focus {
-    background-color: none;
-    outline: none;
-}
+    .div-left{
+        color: #1D5D9B;
+        text-align: center;
+        flex: 1;
+        img{
+            height: 500px;
+            max-width: 100%;
+            min-width: 400px;
+        }
+        
+    }
 
-/* Overwrite default styles of hr */
-hr {
-    border: 1px solid #c8e0e1;
-    margin-bottom: 10px;
-}
-
-/* Set a style for the submit/register button */
-.registerbtn {
-    background-color: #009cb8;
-    color: white;
-    padding: 16px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.8;
-}
-
-.registerbtn:hover {
-    opacity: 1 !important;
-}
-
-/* Add a blue text color to links */
-.container-signup>a {
-    color: rgb(255, 255, 255) !important;
-}
-
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-    background-color: transparent;
-    text-align: center;
-}
-
-.signup-heading {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.button-link {
-    color: #ff0000;
-}
+    .div-right{
+        flex: 1;
+        .container-signup {
+            display: flex;
+            font-size: 15px;
+            width: 50%;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 150px;
+            margin-bottom: auto;
+            background-color: black;
+            padding: 0px 30px 30px 30px;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            color: white;
+            min-width: 400px;
+            box-sizing: border-box;
 
 
-.div-left{
-    width: 100%;
-    text-align: center;
-}
+            input[type=text],
+            input[type=password],
+            input[type=email]{
+                width: 100%;
+                padding: 10px;
+                margin: 6px 0 15px 0;
+                display: inline-block;
+                border: rgb(222, 207, 207);
+                background-color: rgba(61, 61, 61, 0.3);
+            }
+        
+            input[type=text]:focus,
+            input[type=password]:focus {
+                background-color: none;
+                outline: none;
+            }
 
-.div-right{
-    width: 100%;
-}
 
-.signup-img{
-    margin-left: -10%;
-    margin-top: 5px;
-    height: 76vh;
-}
 
-h1{
-    margin-right: 130px;
-    color: white;
-}
+            .button-link {
+                color: #ff0000;
+            }
+        
 
-.bottom-h1{
-    margin-left: 30px;
-}
+            .registerbtn {
+                background-color: #F4D160;
+                color: #1D5D9B;
+                padding: 16px 20px;
+                margin: 8px 0;
+                cursor: pointer;
+                width: 100%;
+                border-radius: 5px;
+            }
+        
+            .registerbtn:hover {
+                opacity: 0.9;
+            }
+        
+
+            .signup-heading {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+        }
+    }
+
 }

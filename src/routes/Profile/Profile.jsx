@@ -33,30 +33,30 @@ function Profile() {
 
     return (
         <div className='profile-main-container'>
-            <h1>Welcome {currentUser.name}!</h1>
+            <h1>Welcome {currentUser?.name}!</h1>
             <div className='profile-card'>
                 <label htmlFor='name'>Name:</label><br/>
                 <input 
                     type="text" 
-                    value={currentUser.name} 
+                    value={currentUser?.name} 
                     disabled={!isEditable} 
                     onChange={(e)=> setCurrentUser({...currentUser,name:e.target.value}) }
                 />
                 <br/>
 
                 <label htmlFor='email'>Email:</label><br/>
-                <input type="text" value={currentUser.email} disabled />
+                <input type="text" value={currentUser?.email} disabled />
                 <br/>
 
 
                 <label htmlFor='height'>Height:</label><br/>
                 <input 
                     type="number" 
-                    value={currentUser.height} 
+                    value={currentUser?.height} 
                     disabled={!isEditable} 
                     onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
                     onChange={(e)=> setCurrentUser({...currentUser,height:e.target.value}) }
-                    placeholder='Enter height in CM'
+                    placeholder='Enter height in meters'
                 />
                 <br/>
 
@@ -64,7 +64,7 @@ function Profile() {
                 <label htmlFor='weight'>Weight:</label><br/>
                 <input 
                     type="number" 
-                    value={currentUser.weight} 
+                    value={currentUser?.weight} 
                     disabled={!isEditable} 
                     onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
                     onChange={(e)=> setCurrentUser({...currentUser,weight:e.target.value}) }

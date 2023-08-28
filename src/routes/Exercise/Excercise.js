@@ -30,9 +30,9 @@ function Exercise(props) {
         <div className='exercise-main-container'>
             <h1>Let us begin with the muscle you want to train today :</h1>
             {bodyParts.length==0?
-                    <>
+                    <div style={{height:'100vh'}}>
                         <h1>Loading....</h1>
-                    </>
+                    </div>
                     :
                     <div className='exercise-container'>
                         {

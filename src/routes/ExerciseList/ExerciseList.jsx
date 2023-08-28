@@ -22,9 +22,9 @@ function ExerciseList(props) {
     return (
         <div>
             {exercisesForSelectedMuscle.length==0?
-            <>
+            <div style={{height:'100vh'}}>
                 Loading...
-            </>:
+            </div>:
             <div className='exercise-list-div'>
                 <h1>Exercises for {muscleName}:-</h1>
                 <span className='exercise-card-span'>

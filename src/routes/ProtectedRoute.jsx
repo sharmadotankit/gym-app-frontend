@@ -2,19 +2,20 @@ import React, {useContext} from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import { useLocation } from 'react-router-dom';
-import {UserContext} from "../context/user.context";
+import Footer from '../comp/Footer/Footer';
 
 const PrivateRoute = () => {
-    const {currentUser} = useContext(UserContext);
+    const isLoggedIn =  localStorage.getItem('isLoggedIn');
+    const token =  localStorage.getItem('token');
 
     const location = useLocation();
     let auth;
 
-    if((currentUser?.token == null || currentUser?.token == '') && (currentUser?.isLoggedIn == null || currentUser?.isLoggedIn == '' || currentUser?.isLoggedIn==false)) {
+    if((token == null || token == '') && (isLoggedIn == null || isLoggedIn == '' || isLoggedIn==false)) {
         auth = false;
     }
-    else if(currentUser?.isLoggedIn && currentUser?.token !== null){
-        let decode = jwt_decode(currentUser?.token);
+    else if(isLoggedIn && token !== null){
+        let decode = jwt_decode(token);
         if(!decode){
             auth = false;
         }
@@ -22,7 +23,7 @@ const PrivateRoute = () => {
             auth = true;
         }
     }
-    else if(currentUser?.isLoggedIn && (currentUser?.token == null || currentUser?.token == '')){
+    else if(isLoggedIn && (token == null || token == '')){
         auth = false;
     }
     else{
@@ -30,9 +31,11 @@ const PrivateRoute = () => {
     }
 
 
-    // If authorized, return an outlet that will render child elements
-    // If not, return element that will navigate to login page
-    return auth ? <Outlet /> : <Navigate to="/login" replace={true} state={{pathAfterLogin:location}}/>;
+    return auth ? <span className='wrapper'>
+                    <Outlet />
+                    <Footer/>
+                </span> 
+                : <Navigate to="/login" replace={true} state={{pathAfterLogin:location}}/>;
 }
 
 export default PrivateRoute;
