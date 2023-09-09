@@ -25,3 +25,25 @@ export const login =  (data)=>{
         }
     });
 }
+
+export const handleForgotPassword = async(data)=>{
+    return new Promise(async (resolve,reject)=>{
+        try{
+            let response = await axios.post(`${backendUrl}/api/auth/forgot-password`,data);
+            resolve(response.data);
+        }catch(err){
+            reject(err);
+        }
+    });
+}
+
+export const resetPasswordForUser = async(data)=>{
+    return new Promise(async (resolve,reject)=>{
+        try{
+            let response = await axios.post(`${backendUrl}/api/auth/reset-password`,data);
+            resolve(response.data);
+        }catch(err){
+            reject(err);
+        }
+    });
+}

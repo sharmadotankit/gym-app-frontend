@@ -25,6 +25,12 @@
             padding: 10px 15px;
             cursor: pointer;
             color: #FBEEAC;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+           transform: scale(1.05);
         }
     }
 }

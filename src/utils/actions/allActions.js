@@ -53,3 +53,40 @@ export const saveExerciseToProfile = async (token, payload) => {
       return error;
     }
   };
+
+
+
+  export const createCheckoutSession = (token,data) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        let header = {
+          Authorization: `Bearer ${JSON.parse(token)}`,
+          "Content-Type": "application/json",
+        };
+        let response = await axios.post(`${backendUrl}/create-checkout-session`,{data:data}, {
+          headers: header,
+        });
+        return resolve(response.data);
+      } catch (err) {
+        return reject(err);
+      }
+    });
+  };
+
+  export const getUserData = async (token, id) => {
+    try {
+      let header = {
+        'Authorization': `Bearer ${JSON.parse(token)}`,
+        'Content-Type': 'application/json'
+      }
+
+      let res = await axios.get(`${backendUrl}/get-user-data/${id}`, { headers: header }).then((res) => {
+        return res.data;
+      }).catch((err) => {
+        return err;
+      });
+      return res;
+    } catch (error) {
+      return error;
+    }
+  };

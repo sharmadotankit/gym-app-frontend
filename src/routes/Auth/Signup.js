@@ -46,6 +46,7 @@ function Signup() {
                 isLoggedIn:true,
                 height:response?.data?.height,
                 weight:response?.data?.weight,
+                isPremium: response?.data?.isPremium,
             });
 
             localStorage.setItem("name", response?.data?.name);
@@ -53,7 +54,9 @@ function Signup() {
             localStorage.setItem("_id", response?.data?._id);
             localStorage.setItem("token", JSON.stringify(response?.data?.token));
             localStorage.setItem("isLoggedIn", true);
-
+            localStorage.setItem("weight", response?.data?.weight);
+            localStorage.setItem("height",  response?.data?.height);
+            localStorage.setItem("isPremium", response?.data?.isPremium?"true":'');
 
             toast.success("User login successful");
             navigate("/user-dashboard")
@@ -73,6 +76,14 @@ function Signup() {
         setUserData({...userData , [e.target.name] : e.target.value})
     }
 
+    const onKeyDown = (e) => {
+        const code = (e.keyCode ? e.keyCode : e.which);
+        if (code == 13) {
+          e.preventDefault()
+          handleOnSignUp();
+        }
+      }
+
     return (
         <>
         <div className="signUpDiv">
@@ -86,13 +97,33 @@ function Signup() {
                 <h1 className='signup-heading'>Register</h1>
                 <p className='signup-heading'>Please fill in this form to create an account.</p>
                 <label htmlFor="name"><b>Name</b></label>
-                <input type="text" placeholder="Enter Name" name="name" id="name" onChange={handleUserInfoChange} />
+                <input 
+                    type="text" 
+                    placeholder="Enter Name" 
+                    name="name" id="name" 
+                    onChange={handleUserInfoChange}
+                    onKeyDown={onKeyDown} 
+                />
 
                 <label htmlFor="email"><b>Email</b></label>
-                <input type="email" placeholder="Enter Email" name="email" id="email" onChange={ handleUserInfoChange}/>
+                <input 
+                    type="email" 
+                    placeholder="Enter Email" 
+                    name="email" 
+                    id="email" 
+                    onChange={ handleUserInfoChange}
+                    onKeyDown={onKeyDown}
+                />
 
                 <label htmlFor="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" id="psw" onChange={handleUserInfoChange}/>
+                <input 
+                    type="password" 
+                    placeholder="Enter Password" 
+                    name="password" 
+                    id="psw" 
+                    onChange={handleUserInfoChange}
+                    onKeyDown={onKeyDown}
+                />
                 {
                     error && error==='Enter a valid password'?
                         <div style={{color:"red",fontSize:'14px'}}>

@@ -10,7 +10,7 @@ const ExerciseDescription = () =>{
     const {selectedExercise,selectedMuscle} = useContext(ExerciseContext);
     const {currentUser} = useContext(UserContext);
     const navigate = useNavigate();
-    let token = localStorage.getItem('Token');
+    let token = localStorage.getItem('token');
 
     useEffect(()=>{
         if(!token){

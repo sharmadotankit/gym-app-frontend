@@ -1,7 +1,11 @@
 .main-container{
-  height: calc(100vh - 70px);
   padding: 0;
-  //background-color: red;
   display: flex;
   min-height: 100vh;
+}
+
+@media (max-width: 960px) {
+  .main-container{
+    flex-direction: column;
+  }
 }

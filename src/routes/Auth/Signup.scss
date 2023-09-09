@@ -2,6 +2,7 @@
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 
     .div-left{
         color: #1D5D9B;
@@ -56,7 +57,7 @@
 
 
             .button-link {
-                color: #ff0000;
+                color: #F4D160;
             }
         
 
@@ -78,7 +79,9 @@
             .signup-heading {
                 margin-left: auto;
                 margin-right: auto;
+                margin-bottom: 10px;
             }
+            
             
         }
     }

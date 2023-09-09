@@ -19,7 +19,9 @@ import ExerciseDescription from '../routes/ExerciseDescription/ExerciseDescripti
 import BMI from '../routes/BMI/BMI';
 import { UserContext } from '../context/user.context';
 import jwt_decode from 'jwt-decode';
-
+import Payment from '../routes/Payment/Payment';
+import PaymentFailed from '../routes/PaymentFailed/PaymentFailed';
+import PaymentSuccess from '../routes/PaymentSuccess/PaymentSuccess';
 
 function App() {
   const isLoggedIn =  localStorage.getItem('isLoggedIn');
@@ -29,13 +31,13 @@ function App() {
   const id = localStorage.getItem("_id");
   const height = localStorage.getItem("height");
   const weight = localStorage.getItem("weight");
+  const isPremium = localStorage.getItem("isPremium");
 
   const { setCurrentUser } = useContext(UserContext);
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleLogout = () =>{
-    console.log('came here  logout')
     setCurrentUser({
         name:null,
         email:null,
@@ -51,6 +53,7 @@ function App() {
     localStorage.setItem("isLoggedIn", false);
     localStorage.setItem("height", "");
     localStorage.setItem("weight", "");
+    localStorage.setItem("isPremium", "");
 }
 
   useEffect(()=>{
@@ -82,6 +85,7 @@ function App() {
       isLoggedIn:true,
       height:height,
       weight:weight,
+      isPremium,
     });
 
 
@@ -113,6 +117,20 @@ function App() {
               <Route path="/exercise"  element = {<ProtectedRoute/>}>
                 <Route path="/exercise" element={<Exercise/>} />
               </Route>
+
+              <Route path="/payment-failed"  element = {<ProtectedRoute/>}>
+                <Route path="/payment-failed" element={<PaymentFailed/>} />
+              </Route>
+
+              <Route path="/payment-success/:id"  element = {<ProtectedRoute/>}>
+                <Route path="/payment-success/:id" element={<PaymentSuccess/>} />
+              </Route>
+
+              <Route path="/payment"  element = {<ProtectedRoute/>}>
+                <Route path="/payment" element={<Payment/>} />
+              </Route>
+
+
 
               <Route path="/exercise-list/:muscleName"  element = {<ProtectedRoute/>}>
                   <Route path="/exercise-list/:muscleName" element={<ExerciseList/>} />

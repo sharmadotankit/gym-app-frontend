@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 // let API_KEY = process.env.React_APP_API_NINJA_KEY
-let API_KEY = process.env.REACT_APP_RAPID_API_ALAZY_HYPOCRITE;
+// let API_KEY = process.env.REACT_APP_RAPID_API_ALAZY_HYPOCRITE;
+let API_KEY = process.env.REACT_APP_RAPID_API_KEY;
 const baseUrl = 'https://exercisedb.p.rapidapi.com';
 
 

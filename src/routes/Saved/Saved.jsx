@@ -10,7 +10,7 @@ function Saved() {
     const {currentUser} = useContext(UserContext);
     const navigate = useNavigate();
     const [savedExercise,setSavedExercise] = useState([]);
-    let token = localStorage.getItem('Token');
+    let token = localStorage.getItem('token');
 
     useEffect(()=>{
         if(!currentUser){

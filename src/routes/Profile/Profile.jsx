@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 function Profile() {
     const {currentUser,setCurrentUser} = useContext(UserContext);
     const [isEditable,setIsEditable] = useState(false);
-    let token = localStorage.getItem('Token');
+    let token = localStorage.getItem('token');
 
     const handleEditInformation = async() =>{
         if(isEditable){
@@ -22,6 +22,7 @@ function Profile() {
                     isLoggedIn:true,
                     height:response?.data?.data?.height,
                     weight:response?.data?.data?.weight,
+                    isPremium:response.data.data.isPremium
                 });
                 setIsEditable(false);
             }
@@ -29,7 +30,6 @@ function Profile() {
             setIsEditable(true);
         }
     }
-
 
     return (
         <div className='profile-main-container'>

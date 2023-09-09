@@ -14,6 +14,9 @@ function Navbar() {
             token:null,
             id:null,
             isLoggedIn:false,
+            height:0,
+            weight:0,
+            isPremium:false,
         })
         localStorage.setItem("name","");
         localStorage.setItem("email", "");
@@ -22,6 +25,7 @@ function Navbar() {
         localStorage.setItem("isLoggedIn", false);
         localStorage.setItem("height", "");
         localStorage.setItem("weight", "");
+        localStorage.setItem("isPremium", "");
     }
 
 

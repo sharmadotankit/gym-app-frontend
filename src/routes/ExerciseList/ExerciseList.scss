@@ -11,5 +11,81 @@
     .exercise-card-span{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
+
+    .load-more-div{
+        width: 100%;
+        text-align: center;
+
+        button{
+            font-size: 2rem;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #1D5D9B;
+            color: #F4D160;
+            transition: 0.3s;
+        }
+
+        button:hover{
+            transform: scale(1.02);
+        }
+    }
+}
+
+.modalDiv{
+    opacity: 1;
+    font-size: 1.5rem;
+
+    .modal-title{
+        text-align: center;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+    .modal-body{
+        p{
+            margin: 10px 5px;
+        }
+
+        ul{
+            list-style-type: none;
+            li{
+                font-size: 1.3rem;
+            }
+        }
+
+        h6{
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .upgrade-button{
+            background-color: #1D5D9B;
+            color: #F4D160;
+            padding: 5px 20px;
+            border-radius: 5px;
+            margin-left: 30px;
+            transition: 0.3s;
+        }
+
+        .upgrade-button:hover{
+            transform: scale(1.05);
+        }
+
+        
+    }
+
+    .back-button{
+        background-color: #1D5D9B;
+        color: #F4D160;
+        padding: 5px 20px;
+        border-radius: 5px;
+        margin-left: 30px;
+        transition: 0.3s;
+    }
+
+    .back-button:hover{
+        transform: scale(1.05);
+    }
+
 }
