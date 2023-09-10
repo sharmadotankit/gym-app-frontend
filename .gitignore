@@ -24,3 +24,5 @@
 
 *.env*
 *.lock*
+*.lock
+*lock.json*
