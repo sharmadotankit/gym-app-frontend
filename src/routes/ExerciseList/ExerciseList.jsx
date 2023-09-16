@@ -3,12 +3,14 @@ import { useNavigate, useParams } from "react-router-dom";
 import { fetchExerciseByBodyParts } from "../../utils/actions/apiActions";
 import ExerciseCard from "../../comp/ExerciseCard/ExerciseCard";
 import {createCheckoutSession} from '../../utils/actions/allActions';
-import {loadStripe} from '@stripe/stripe-js';
+
 
 import "./ExerciseList.scss";
 import { UserContext } from "../../context/user.context";
 import { Modal, Button } from "react-bootstrap";
 import data from './data.json';
+import { toast } from "react-toastify";
+import loadingImg from '../../assets/loading.gif'
 
 function ExerciseList(props) {
   let { muscleName } = useParams();
@@ -19,7 +21,7 @@ function ExerciseList(props) {
   const { currentUser } = useContext(UserContext);
   const navigate = useNavigate();
   const [showPremiumModal, setShowPremiumModal] = useState(false);
-
+  const [isStripeLoading,setIsStripeLoading] = useState(false);
   useEffect(() => {
     const fetchExerciseData = async () => {
       let itemResponse = await fetchExerciseByBodyParts(muscleName);
@@ -35,16 +37,23 @@ function ExerciseList(props) {
   };
 
   const handleUpdatePremiumClick  = async()=>{
-    let data = { 
-      userEmail: currentUser.email,
+    try{
+      setIsStripeLoading(true);
+      let data = { 
+        userEmail: currentUser.email,
+      }
+      const sessionResponse = await createCheckoutSession(token,data);
+      if(sessionResponse.status){
+        window.location = sessionResponse.url;
+      }
+    }catch(err){
+      setIsStripeLoading(false);
+      toast.error("Something went wrong")
     }
-    const sessionResponse = await createCheckoutSession(token,data);
-    if(sessionResponse.status){
-      window.location = sessionResponse.url;
-    }
+    
   }
 
-  console.log(currentUser)
+  
 
 
   return (
@@ -107,7 +116,14 @@ function ExerciseList(props) {
               <li>Make a one-time payment of just ₹ 99.</li>
               <li>Instantly unlock a world of fitness possibilities!</li>
             </ol>
-            👉<button className="upgrade-button" onClick={handleUpdatePremiumClick}>Upgrade to Premium Membership Now</button>
+            {isStripeLoading?
+            <>
+            👉<button className="upgrade-button"> <img  src={loadingImg} alt="loading" height='20px'/></button>
+            </>:
+            <>
+            👉<button className="upgrade-button" onClick={handleUpdatePremiumClick}> Upgrade to Premium Membership Now</button>
+            </>}
+            
             <p>
               Join our community of motivated individuals who are already
               benefiting from Premium Membership. Don't wait—seize this offer
