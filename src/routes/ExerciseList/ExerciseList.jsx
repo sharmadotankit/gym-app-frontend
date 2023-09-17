@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { fetchExerciseByBodyParts } from "../../utils/actions/apiActions";
 import ExerciseCard from "../../comp/ExerciseCard/ExerciseCard";
 import {createCheckoutSession} from '../../utils/actions/allActions';
@@ -7,8 +7,7 @@ import {createCheckoutSession} from '../../utils/actions/allActions';
 
 import "./ExerciseList.scss";
 import { UserContext } from "../../context/user.context";
-import { Modal, Button } from "react-bootstrap";
-import data from './data.json';
+import { Modal } from "react-bootstrap";
 import { toast } from "react-toastify";
 import loadingImg from '../../assets/loading.gif'
 
@@ -19,17 +18,14 @@ function ExerciseList(props) {
     []
   );
   const { currentUser } = useContext(UserContext);
-  const navigate = useNavigate();
   const [showPremiumModal, setShowPremiumModal] = useState(false);
   const [isStripeLoading,setIsStripeLoading] = useState(false);
   useEffect(() => {
     const fetchExerciseData = async () => {
       let itemResponse = await fetchExerciseByBodyParts(muscleName);
       setExercisesForSelectedMuscles(itemResponse.data);
-      // setExercisesForSelectedMuscles(exerciseData)
     };
-    // fetchExerciseData();
-    setExercisesForSelectedMuscles(data)
+    fetchExerciseData();
   }, []);
 
   const handleClose = () => {
@@ -139,7 +135,7 @@ function ExerciseList(props) {
         </Modal.Footer>
       </Modal>
 
-      {exercisesForSelectedMuscle.length == 0 ? (
+      {exercisesForSelectedMuscle.length === 0 ? (
         <div style={{ height: "100vh" }}>Loading...</div>
       ) : (
         <div className="exercise-list-div">

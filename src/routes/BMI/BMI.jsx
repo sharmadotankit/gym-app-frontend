@@ -44,6 +44,7 @@ const BMI = ()=> {
                 <br/>
 
 
+                
                 <button className='primay-button' onClick={handleCalculateBMI}> Calculate BMI</button>
                 {(isBMICalculated && bmiValue)?
                     <>

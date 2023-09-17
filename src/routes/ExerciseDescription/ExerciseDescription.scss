@@ -2,13 +2,13 @@
     text-align: center;
     margin: 10px;
     padding: 20px;
-    display: flex;
     min-height: 100vh;
 
     .div-left{
        img{
-        height: 60vh;
+        height: 100%;
         width: auto;
+        max-width: 100%;
         border-radius: 5px;
         border:1px solid #75C2F6;
         }
@@ -16,10 +16,8 @@
 
     .description-div{
         width: 100%;
-        min-width: 400px;
         margin-top: 40px;
-        margin-left: 300px;
-        text-align: left;
+        text-align: center;
         color: #000;
         h1{
           text-align: center;
@@ -33,10 +31,20 @@
         p{
           font-size: 20px;
         }
+
+        table{
+          width: 40%;
+          max-width: 300px;
+          margin: auto;
+          text-align: left;
+          td{
+            font-size: 20px;
+          }
+        }
     }
 
     .button-div{
-        text-align: left;
+        text-align: center;
         margin-top: 40px;
         .begin-exercise{
           color:rgb(255, 255, 255);
@@ -45,7 +53,7 @@
           padding: 5px;
           border:1px solid rgb(0, 0, 48);
           border-radius: 5px;
-          background-color: #00999e;
+          background-color: #1D5D9B;
           width: 200px;
           box-shadow: 2px 2px 2px gray;
           transition: 0.3s;

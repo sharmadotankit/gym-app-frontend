@@ -90,3 +90,15 @@ export const saveExerciseToProfile = async (token, payload) => {
       return error;
     }
   };
+
+
+  export const connectToServer = () =>{
+    return new Promise(async (resolve,reject)=>{
+      try{
+          let response = await axios.get(`${backendUrl}/comman/connect-to-server`);
+          resolve(response.data);
+      }catch(err){
+          reject(err);
+      }
+  });
+  }
