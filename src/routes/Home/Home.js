@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Home.scss"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
@@ -10,13 +10,20 @@ import fifth from './images/5.jpg'
 import sixth from './images/6.jpg'
 import getStartedImg from '../../assets/home-get-started.jpg';
 import {useNavigate} from "react-router-dom";
+import { UserContext } from '../../context/user.context';
 
 
 function Home() {
 
     const navigate = useNavigate();
+    const {currentUser} = useContext(UserContext);
     const handleExerciseClick = () =>{
-        navigate('/exercise');
+        if(currentUser.isLoggedIn){
+            navigate('/exercise');
+        }
+        else{
+            navigate('/login');
+        }
     }
 
     const features = [
@@ -84,9 +91,9 @@ function Home() {
         </div>
 
         <div className='get-start-div'>
-            <img src={getStartedImg}  className='get-started-img'/>
+            <img src={getStartedImg}  className='get-started-img' alt="get-started-img"/>
             <div className='content'>
-                <h1> Start you fitness now!!</h1>
+                <h1> Start your fitness journey now!!</h1>
                 <button onClick={handleExerciseClick} className='get-started-button'>Get Started</button>
             </div>
         </div>  
