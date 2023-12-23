@@ -35,7 +35,7 @@ function Saved() {
             <>
                 No Saved Exercise Found
             </>:
-            <div className='saved-list-div'>
+            <div className='exercise-list-div'>
                 
                 <span className='exercise-card-span'>
                 { 
